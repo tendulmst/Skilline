@@ -1,0 +1,47 @@
+@import './vars.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background: radial-gradient(circle at top, rgba(87, 108, 188, 0.18), transparent 60%), var(--color-bg);
+  color: var(--color-text);
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+ 

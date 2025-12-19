@@ -1,0 +1,398 @@
+@import './vars.css';
+
+.App {
+  background: var(--color-bg);
+  min-height: 100%;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+}
+
+.section {
+  width: min(100%, var(--max-width));
+  margin: 0 auto;
+  padding: clamp(80px, 10vw, 120px) clamp(20px, 5vw, 40px);
+}
+
+.sectionHeading {
+  max-width: 640px;
+  display: grid;
+  gap: 12px;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.sectionHeading h2 {
+  font-family: var(--font-outfit);
+  font-size: clamp(32px, 4.6vw, 52px);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.sectionHeading p {
+  color: var(--color-muted);
+}
+
+.sectionKicker {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary-strong);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(32px, 6vw, 80px);
+  padding-top: clamp(120px, 12vw, 160px);
+}
+
+.heroContent {
+  display: grid;
+  gap: 24px;
+}
+
+.heroContent h1 {
+  font-family: var(--font-outfit);
+  font-size: clamp(40px, 5.6vw, 70px);
+  line-height: 1.05;
+}
+
+.heroContent p {
+  color: var(--color-muted);
+  max-width: 520px;
+}
+
+.heroKicker {
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--color-primary-strong);
+}
+
+.heroHighlight {
+  display: inline-block;
+  margin-right: 12px;
+  padding: 0 10px;
+  background: linear-gradient(120deg, rgba(122, 162, 255, 0.18), rgba(96, 165, 250, 0.08));
+  border-radius: 999px;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(122, 162, 255, 0.95), rgba(89, 133, 255, 0.95));
+  color: #020617;
+  font-weight: 600;
+  box-shadow: var(--shadow-lift);
+}
+
+.heroImageWrapper {
+  position: relative;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at 40% 30%, rgba(122, 162, 255, 0.2), transparent 65%),
+    rgba(7, 19, 44, 0.85);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.heroImageWrapper img {
+  width: 100%;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: 10%;
+  border-radius: 100%;
+  background: radial-gradient(circle, rgba(122, 162, 255, 0.35), transparent 70%);
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.heroImageWrapper img {
+  position: relative;
+  z-index: 1;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid rgba(122, 162, 255, 0.15);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: grid;
+  gap: 16px;
+  min-height: 230px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+.card img {
+  width: 48px;
+  height: 48px;
+}
+
+.skillList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.skillCard {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: rgba(8, 22, 48, 0.85);
+  border: 1px solid rgba(122, 162, 255, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(122, 162, 255, 0.05);
+}
+
+.skillCard img {
+  width: 42px;
+  height: 42px;
+}
+
+.skillCard h3 {
+  font-family: var(--font-outfit);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.skillCard p {
+  color: var(--color-muted);
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.projectCard {
+  display: grid;
+  gap: 18px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(8, 19, 43, 0.92);
+  border: 1px solid rgba(122, 162, 255, 0.12);
+  min-height: 320px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.projectCard img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.projectCard div {
+  padding: 0 24px 28px;
+}
+
+.projectCard h3 {
+  font-family: var(--font-outfit);
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.projectCard p {
+  color: var(--color-muted);
+}
+
+.timeline {
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(122, 162, 255, 0.8), rgba(122, 162, 255, 0));
+}
+
+.timelineItem {
+  position: relative;
+  background: rgba(7, 19, 44, 0.9);
+  border: 1px solid rgba(122, 162, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.timelineItem img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.45));
+}
+
+.timelineItem h3 {
+  font-family: var(--font-outfit);
+  font-size: 20px;
+}
+
+.timelineItem p {
+  color: var(--color-muted);
+}
+
+.timelineItem span {
+  color: rgba(148, 163, 184, 0.7);
+  font-size: 14px;
+}
+
+.timelineBullet {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(122, 162, 255, 0.9), rgba(122, 162, 255, 0));
+  left: -14px;
+  top: 28px;
+}
+
+.contact {
+  padding-bottom: clamp(120px, 12vw, 160px);
+}
+
+.contactCard {
+  display: grid;
+  gap: 24px;
+  padding: clamp(32px, 6vw, 48px);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, rgba(7, 19, 44, 0.85), rgba(8, 28, 63, 0.95));
+  border: 1px solid rgba(122, 162, 255, 0.18);
+  box-shadow: var(--shadow-soft);
+}
+
+.contactCard p {
+  color: var(--color-muted);
+  max-width: 540px;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
+
+.contactLinks {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contactLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(7, 22, 50, 0.8);
+  border: 1px solid rgba(122, 162, 255, 0.18);
+  color: var(--color-text);
+}
+
+.contactLinks img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  padding: 30px;
+  text-align: center;
+  color: rgba(248, 251, 255, 0.6);
+  font-size: 14px;
+  border-top: 1px solid rgba(122, 162, 255, 0.15);
+  background: rgba(4, 14, 32, 0.9);
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: clamp(120px, 14vw, 180px);
+  }
+
+  .heroImageWrapper {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: clamp(64px, 12vw, 80px) clamp(18px, 6vw, 28px);
+  }
+
+  .heroHighlight {
+    margin-right: 6px;
+  }
+
+  .card,
+  .skillCard,
+  .projectCard,
+  .timelineItem,
+  .contactCard {
+    padding: clamp(20px, 6vw, 28px);
+  }
+
+  .timelineItem {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .contactActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contactLinks {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroContent h1 {
+    font-size: clamp(36px, 11vw, 44px);
+  }
+
+  .timeline {
+    padding-left: 12px;
+  }
+
+  .timeline::before {
+    left: 4px;
+  }
+
+  .timelineBullet {
+    left: -18px;
+  }
+}

@@ -1,0 +1,26 @@
+ :root {
+   /* Color palette */
+   --color-text: #f8fbff;
+   --color-muted: rgba(248, 251, 255, 0.68);
+   --color-primary: #7aa2ff;
+   --color-primary-strong: #9ab8ff;
+   --color-secondary: #19376d;
+   --color-dark: #0b2447;
+   --color-bg: #04152d;
+   --color-card: rgba(9, 24, 54, 0.8);
+   --color-card-strong: rgba(14, 33, 70, 0.95);
+
+   /* Shadows */
+   --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.45);
+   --shadow-lift: 0 14px 30px rgba(30, 64, 175, 0.32);
+
+   /* Layout */
+   --max-width: 1100px;
+   --radius-lg: 32px;
+   --radius-md: 20px;
+   --radius-sm: 12px;
+
+   /* Typography */
+   --font-roboto: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+   --font-outfit: 'Outfit', var(--font-roboto);
+ }
